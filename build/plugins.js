@@ -8,6 +8,11 @@ const PluginConfig = [
     new HtmlWebpackPlugin({
         filename: 'index.html',
         template: resolve(__dirname, '../index.ejs'),
+        inject: false,
+        title: 'title',
+        minify: {
+            collapseWhitespace: false
+        },
         meta: {
             all: Object.assign(config[0], config[1]),
             route: config[1],
