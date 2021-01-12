@@ -15,7 +15,8 @@ module.exports = Merge(BaseConfig, {
         ...BasePlugins,
         new webpack.BannerPlugin(new Date().toString()),
         new webpack.DefinePlugin({ 
-            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+            'process.env.HOST': JSON.stringify(process.env.HOST),
         })
     ]
 });
