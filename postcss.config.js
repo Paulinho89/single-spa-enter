@@ -1,5 +1,17 @@
 module.exports = {
-    plugins: [
-        require('autoprefixer')
-    ]
-};
+    css:{
+    loaderOptions: {
+        postcss: {
+            plugins: [
+                selectorNamespace({
+                    namespace(css) {
+                        /* 无需添加的样式 */
+                        if (css.includes("element-variables.scss")) return "";
+                        return ".single-spa-enter";
+                    }
+                })
+            ]
+        }
+    }
+}
+}
